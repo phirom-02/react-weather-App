@@ -12,6 +12,7 @@
 	outline: none;
 	border: none;
 	background-color: inherit;
+	width: 100%;
 }
 
 .location-form__input::placeholder {
