@@ -25,6 +25,9 @@ body {
 /* font sizes */
 .logo {
 	font-size: 1.25rem;
+	font-family: 'Moul', cursive;
+	color: var(--soft-lavender-gray);
+	text-align: center;
 }
 
 .font-size-temperature {
@@ -89,5 +92,9 @@ body {
 
 	.font-size-secondary1 {
 		font-size: 0.75rem;
+	}
+
+	.logo {
+		text-align: left;
 	}
 }
