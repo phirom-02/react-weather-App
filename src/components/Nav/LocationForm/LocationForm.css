@@ -1,0 +1,43 @@
+.location-form {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	gap: 0.75rem;
+}
+
+.location-form__btns {
+	display: flex;
+	align-items: center;
+	gap: 0.625rem;
+}
+
+.location-form__btn {
+	width: 40px;
+	height: 40px;
+	border-radius: 100px;
+	border: none;
+	outline: none;
+	box-shadow: 0px 1px 4px 0px rgba(0, 0, 0, 0.15);
+	cursor: pointer;
+
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+.btn-history {
+	color: var(--midnight-ink);
+	background-color: var(--vibrant-tangerine);
+}
+
+.btn-current-location {
+	color: var(--soft-lavender-gray);
+	background-color: var(--deep-indigo);
+}
+
+@media screen and (min-width: 480px) {
+	.location-form__btn {
+		width: 42px;
+		height: 42px;
+	}
+}
