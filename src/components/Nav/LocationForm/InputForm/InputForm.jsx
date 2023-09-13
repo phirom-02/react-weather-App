@@ -8,7 +8,7 @@ const InputForm = () => {
 				placeholder="Search location"
 			/>
 			<span className="location-form__input-cancel">
-				<i class="ti ti-x"></i>
+				<i className="ti ti-x"></i>
 			</span>
 		</div>
 	);

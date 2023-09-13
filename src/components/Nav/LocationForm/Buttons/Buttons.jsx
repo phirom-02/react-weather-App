@@ -4,11 +4,11 @@ const Buttons = () => {
 	return (
 		<div className="location-form__btns">
 			<Button modifierClass="btn-history">
-				<i class="ti ti-history-toggle icon-size-primary"></i>
+				<i className="ti ti-history-toggle icon-size-primary"></i>
 			</Button>
 
 			<Button modifierClass="btn-current-location">
-				<i class="ti ti-current-location icon-size-primary"></i>
+				<i className="ti ti-current-location icon-size-primary"></i>
 			</Button>
 		</div>
 	);
