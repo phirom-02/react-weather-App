@@ -1,0 +1,93 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@500;600;700&family=Moul&display=swap');
+
+:root {
+	/* PRIMARY COLORS */
+	--soft-lavender-gray: #f1f2f6;
+	--gentle-cornflower: #758bfd;
+
+	/* SECONDARY COLORS */
+	--midnight-ink: #101a36;
+	--misty-silver: #b7bac3;
+	--deep-indigo: #27187e;
+	--dreamy-periwinkle: #aeb8fe;
+	--vibrant-tangerine: #ff8600;
+}
+
+body {
+	max-width: 1440px;
+	min-width: 320px;
+	min-height: 100vh;
+	margin: 0 auto;
+	font-family: 'Inter', sans-serif;
+}
+
+/* TYPOGRAPHY */
+/* font sizes */
+.logo {
+	font-size: 1.25rem;
+}
+
+.font-size-temperature {
+	font-size: 2rem;
+}
+
+.font-size-location {
+	font-size: 1.5rem;
+}
+
+.font-size-primary1 {
+	font-size: 0.875rem;
+}
+
+.font-size-primary2 {
+	font-size: 0.75rem;
+}
+
+.font-size-secondary1 {
+	font-size: 0.625rem;
+}
+
+.font-size-fixed {
+	font-size: 0.875rem;
+}
+
+/* font colors */
+.font-color-primary {
+	color: var(--midnight-ink);
+}
+
+.font-color-primary {
+	color: var(--gentle-cornflower);
+}
+
+/* icon sizes */
+.icon-size-primary {
+	font-size: 1.25rem;
+}
+
+.icon-size-secondary {
+	font-size: 1.5rem;
+}
+
+@media screen and (min-width: 800px) {
+	/* font sizes */
+	.font-size-temperature {
+		font-size: 2.5rem;
+	}
+
+	.font-size-location {
+		font-size: 2rem;
+	}
+
+	.font-size-primary1 {
+		font-size: 1rem;
+	}
+
+	.font-size-primary2 {
+		font-size: 0.875rem;
+	}
+
+	.font-size-secondary1 {
+		font-size: 0.75rem;
+	}
+}
