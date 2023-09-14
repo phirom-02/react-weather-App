@@ -1,0 +1,31 @@
+.daily-forecast__item {
+	display: grid;
+	grid-template-columns: repeat(3, 1fr);
+	align-items: center;
+
+	padding: 0.875rem 0;
+  border-bottom: 1px solid var(--misty-silver);
+}
+
+.daily-forecast__item-date h3 {
+	font-weight: 600;
+}
+
+.daily-forecast__item-degree {
+	flex-grow: 1;
+	display: flex;
+	justify-content: center;
+}
+
+.daily-forecast__item-image {
+	display: flex;
+	justify-content: flex-end;
+
+	width: 100%;
+	filter: drop-shadow(0 4px 10px rgba(0, 0, 0, 0.15));
+}
+
+.daily-forecast__item-image img {
+	width: 56px;
+	height: 56px;
+}
