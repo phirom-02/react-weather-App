@@ -1,0 +1,18 @@
+.current-weather__highlights {
+	margin-top: 2rem;
+}
+
+.current-weather__highlights-item {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	gap: 0.5rem;
+
+	border-bottom: 1px solid var(--misty-silver);
+	padding: 0.8rem 0;
+}
+
+.highlights-item__value {
+	flex-grow: 1;
+	text-align: right;
+}
