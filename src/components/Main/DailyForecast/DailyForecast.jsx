@@ -4,12 +4,15 @@ import rain from '../../../assets/04dn.svg';
 
 const DailyForecast = () => {
 	return (
-		<section className="section daily-forecast__seciton">
+		<section className="section daily-forecast__section">
 			<h2 className="font-size-secondary1 font-color-primary header2">
 				daily forecast
 			</h2>
 
 			<ul className="daily-forecast__list">
+				<_DailyForecastItem />
+				<_DailyForecastItem />
+				<_DailyForecastItem />
 				<_DailyForecastItem />
 				<_DailyForecastItem />
 				<_DailyForecastItem />

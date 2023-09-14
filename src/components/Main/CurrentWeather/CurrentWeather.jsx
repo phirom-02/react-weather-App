@@ -6,7 +6,7 @@ import './CurrentWeather.css';
 
 const CurrentWeather = () => {
 	return (
-		<section className="section current-weather__seciton">
+		<section className="section current-weather__section">
 			<h2 className="font-size-secondary1 font-color-primary header2">
 				current weather
 			</h2>

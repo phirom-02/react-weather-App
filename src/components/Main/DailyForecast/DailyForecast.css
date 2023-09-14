@@ -1,3 +1,19 @@
+.daily-forecast__section {
+	min-width: 280px;
+}
+
+.daily-forecast__list {
+	overflow-y: scroll;
+	height: 50vh;
+
+	-ms-overflow-style: none; /* Internet Explorer 10+ */
+	scrollbar-width: none; /* Firefox */
+}
+
+.daily-forecast__list::-webkit-scrollbar {
+	display: none; /* Safari and Chrome */
+}
+
 .daily-forecast__item {
 	display: grid;
 	grid-template-columns: repeat(3, 1fr);

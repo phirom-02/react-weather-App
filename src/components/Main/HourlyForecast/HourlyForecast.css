@@ -1,3 +1,12 @@
+.hourly-forecast__section i {
+	transition: 0.3s ease-in-out;
+}
+
+.hourly-forecast__section:hover i {
+	color: tomato;
+	transform: translateX(0.25rem);
+}
+
 .hourly-forecast__cards-wrapper {
 	display: grid;
 	grid-auto-flow: column;
@@ -24,6 +33,11 @@
 	background-color: var(--gentle-cornflower);
 	padding: 0.5rem 0;
 	border-radius: 0.25rem;
+	transition: 0.3s ease-in-out;
+}
+
+.hourly-forecast__card:hover {
+	background-color: var(--deep-indigo);
 }
 
 .hourly-forecast__card-image-container img {
@@ -33,6 +47,12 @@
 
 @media screen and (min-width: 480px) {
 	.hourly-forecast__cards-wrapper {
-		grid-auto-columns: calc((100% / 6) - 0.4rem);
+		grid-auto-columns: calc((100% / 5) - 0.4rem);
+	}
+}
+
+@media screen and (min-width: 768px) {
+	.hourly-forecast__cards-wrapper {
+		grid-auto-columns: calc((100% / 8) - 0.5rem);
 	}
 }

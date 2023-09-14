@@ -22,6 +22,10 @@ body {
 	background-color: var(--soft-lavender-gray);
 }
 
+.container {
+	box-shadow: 0 0px 20px rgba(0, 0, 0, 0.15);
+}
+
 /* TYPOGRAPHY */
 /* font sizes */
 .logo {
@@ -97,5 +101,11 @@ body {
 
 	.logo {
 		text-align: left;
+	}
+
+	body {
+		display: flex;
+		align-items: center;
+		justify-content: center;
 	}
 }

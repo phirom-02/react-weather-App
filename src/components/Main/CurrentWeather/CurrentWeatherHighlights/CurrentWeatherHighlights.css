@@ -1,5 +1,6 @@
 .current-weather__highlights {
 	margin-top: 2rem;
+	min-width: 280px;
 }
 
 .current-weather__highlights-item {
