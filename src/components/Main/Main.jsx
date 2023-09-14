@@ -1,5 +1,7 @@
 import { CurrentWeather } from './CurrentWeather/CurrentWeather';
 
+import { HourlyForecast } from './HourlyForecast/HourlyForecast';
+
 import './Main.css';
 
 const Main = () => {
@@ -9,22 +11,6 @@ const Main = () => {
 			<HourlyForecast />
 			<DailyForecast />
 		</main>
-	);
-};
-
-const HourlyForecast = () => {
-	return (
-		<section className="section hourly-forecast__seciton">
-			<h2 className="font-size-secondary1 font-color-primary header2">
-				hourly forecast
-			</h2>
-
-			<ul className="hourly-forecast__cards-wrapper">
-				<li className="hourly-forecast__card">
-					<span></span>
-				</li>
-			</ul>
-		</section>
 	);
 };
 
