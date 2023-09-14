@@ -1,0 +1,29 @@
+.dropdown-wrapper {
+	position: absolute;
+	width: 100%;
+	background-color: var(--soft-lavender-gray);
+	box-shadow: 0 2px 10px rgba(0, 0, 0, 0.15);
+	left: 0;
+	bottom: 0;
+	transform: translateY(100%);
+	border-radius: 0 0 0.5rem 0.5rem;
+}
+
+.dropdown-list {
+	padding: 1.25rem 1.25rem;
+}
+
+.dropdown-list__item {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+
+	border-bottom: 1px solid var(--misty-silver);
+	padding: 0.625rem 0;
+}
+
+@media screen and (min-width: 1024px) {
+	.dropdown-wrapper {
+		bottom: -16px;
+	}
+}
