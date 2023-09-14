@@ -1,0 +1,27 @@
+.current-weather__highlights {
+	margin-top: 2rem;
+	min-width: 280px;
+}
+
+.current-weather__highlights-item {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	gap: 0.5rem;
+
+	border-bottom: 1px solid var(--misty-silver);
+	padding: 0.8rem 0;
+}
+
+.current-weather__highlights-item i {
+	color: var(--midnight-ink);
+}
+
+.highlights-item__key {
+	text-transform: capitalize;
+}
+
+.highlights-item__value {
+	flex-grow: 1;
+	text-align: right;
+}

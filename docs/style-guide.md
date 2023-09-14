@@ -14,7 +14,7 @@
 
 ## Screen display
 
-- `Screen displays`: 320px - 768px - 1440px
+- `Screen displays`: 375px - 768px - 1440px
 
 <br>
 

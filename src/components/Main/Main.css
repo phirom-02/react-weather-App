@@ -1,0 +1,30 @@
+.main {
+	padding: 2rem 1rem;
+}
+
+.section {
+	margin-bottom: 2rem;
+}
+
+.header2 {
+	display: flex;
+	align-items: center;
+	gap: 0.25rem;
+
+	font-weight: 600;
+	text-transform: uppercase;
+	margin-bottom: 0.875rem;
+}
+
+.header2 i {
+	font-size: 1rem;
+}
+
+@media screen and (min-width: 1024px) {
+	.main {
+		display: flex;
+		align-items: flex-start;
+		justify-content: center;
+		gap: 2rem;
+	}
+}

@@ -1,0 +1,20 @@
+.nav {
+	display: flex;
+	flex-direction: column;
+	gap: 1rem;
+
+	position: relative;
+	z-index: 1;
+	background-color: var(--gentle-cornflower);
+	padding: 1rem 1rem;
+	box-shadow: 0 2px 10px rgba(0, 0, 0, 0.15);
+}
+
+@media screen and (min-width: 480px) {
+	.nav {
+		flex-direction: row;
+		align-items: center;
+		justify-content: space-between;
+		gap: 1rem;
+	}
+}
