@@ -52,8 +52,8 @@ const _HighlightsElement = ({ iconChildren, titleKey, value }) => {
 	return (
 		<li className="current-weather__highlights-item">
 			{iconChildren}
-			<span className="highlights-item__key font-size-primary1">{titleKey}</span>
-			<span className="highlights-item__value font-size-primary1">{value}</span>
+			<span className="highlights-item__key font-size-primary1 font-color-primary">{titleKey}</span>
+			<span className="highlights-item__value font-size-primary1 font-color-primary">{value}</span>
 		</li>
 	);
 };

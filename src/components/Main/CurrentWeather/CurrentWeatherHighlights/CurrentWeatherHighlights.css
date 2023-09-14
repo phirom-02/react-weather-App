@@ -12,6 +12,10 @@
 	padding: 0.8rem 0;
 }
 
+.current-weather__highlights-item i {
+	color: var(--midnight-ink);
+}
+
 .highlights-item__key {
 	text-transform: capitalize;
 }
