@@ -13,7 +13,7 @@ const HourlyForecast = () => {
 		<section className="section hourly-forecast__seciton">
 			<h2 className="font-size-secondary1 font-color-primary header2">
 				<span>hourly forecast</span>
-				<i class="ti ti-arrow-narrow-right"></i>
+				<i className="ti ti-arrow-narrow-right"></i>
 			</h2>
 
 			<ul className="hourly-forecast__cards-wrapper">
