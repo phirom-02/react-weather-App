@@ -60,6 +60,10 @@ body {
 	color: var(--midnight-ink);
 }
 
+.font-color-secondary {
+	color: var(--soft-lavender-gray);
+}
+
 .font-color-accent {
 	color: var(--gentle-cornflower);
 }
