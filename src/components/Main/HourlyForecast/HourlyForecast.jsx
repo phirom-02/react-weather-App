@@ -5,14 +5,15 @@ import './HourlyForecast.css';
 import rain from '../../../assets/04dn.svg';
 
 const HourlyForecast = () => {
-  /*
-  * TODO: add drag function the the drag component
-  */
+	/*
+	 * TODO: add drag function the the drag component
+	 */
 
 	return (
 		<section className="section hourly-forecast__seciton">
 			<h2 className="font-size-secondary1 font-color-primary header2">
-				hourly forecast
+				<span>hourly forecast</span>
+				<i class="ti ti-arrow-narrow-right"></i>
 			</h2>
 
 			<ul className="hourly-forecast__cards-wrapper">

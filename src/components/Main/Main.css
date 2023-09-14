@@ -7,7 +7,15 @@
 }
 
 .header2 {
+	display: flex;
+	align-items: center;
+	gap: 0.25rem;
+
 	font-weight: 600;
 	text-transform: uppercase;
 	margin-bottom: 0.875rem;
+}
+
+.header2 i {
+	font-size: 1rem;
 }
