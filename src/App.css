@@ -19,11 +19,12 @@ body {
 	min-height: 100vh;
 	margin: 0 auto;
 	font-family: 'Inter', sans-serif;
-	background-color: var(--soft-lavender-gray);
+	background-color: var(--misty-silver);
 }
 
 .container {
 	box-shadow: 0 0px 20px rgba(0, 0, 0, 0.15);
+	background-color: var(--soft-lavender-gray);
 }
 
 /* TYPOGRAPHY */
