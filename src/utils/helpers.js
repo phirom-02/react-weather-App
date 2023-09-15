@@ -6,38 +6,17 @@ import icons from './icons';
  * @returns {obj}
  */
 export const getDate = (unixTimestamp) => {
-	const date = new Date();
+	const date = new Date(unixTimestamp * 1000);
 
-	const dayOfWeek = [
-		'Sunday',
-		'Monday',
-		'Tuesday',
-		'Wednesday',
-		'Thursday',
-		'Friday',
-		'Saturday',
-	];
-
-	const monthOfYear = [
-		'Jan',
-		'Feb',
-		'Mar',
-		'Apr',
-		'May',
-		'Jun',
-		'Jul',
-		'Aug',
-		'Sep',
-		'Oct',
-		'Nov',
-		'Dec',
-	];
-
-	return {
-		month: monthOfYear[date.getMonth()],
-		day: date.getDate(),
-		dayOfWeek: dayOfWeek[date.getDay()],
+	const dateFormatOptions = {
+		weekday: 'short',
+		month: 'short',
+		day: 'numeric',
 	};
+
+	const formattedDate = date.toLocaleDateString('en-US', dateFormatOptions);
+
+	return formattedDate
 };
 
 /**
