@@ -1,0 +1,17 @@
+.current-weather__card {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+
+.current-weather__text-container {
+	display: flex;
+	flex-direction: column;
+	text-align: center;
+}
+
+.current-weather__image-container img {
+	height: 200px;
+	width: 200px;
+	filter: drop-shadow(0 2px 20px rgba(0, 0, 0, 0.10));
+}

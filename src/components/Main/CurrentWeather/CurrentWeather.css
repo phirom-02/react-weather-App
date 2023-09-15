@@ -1,0 +1,7 @@
+@media screen and (min-width: 768px) {
+  .current-weather__wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+  }
+}
