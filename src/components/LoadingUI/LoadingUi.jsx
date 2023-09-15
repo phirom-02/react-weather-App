@@ -1,6 +1,6 @@
 import './LoadingUi.css';
 
-import loadImage from '../../../public/rainbow-clear.svg';
+import loadImage from '/rainbow-clear.svg';
 
 const LoadingUi = () => {
 	return (

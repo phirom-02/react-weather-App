@@ -12,9 +12,9 @@ import './index.css';
 
 import './App.css';
 
-import { LoadingUi } from './components/LoadingUI/LoadingUI';
+import { LoadingUi } from './components/LoadingUI/LoadingUi';
 
-import { ErrorUi } from './components/ErrorUI/ErrorUI';
+import { ErrorUi } from './components/ErrorUI/ErrorUi';
 
 function App() {
 	const {
