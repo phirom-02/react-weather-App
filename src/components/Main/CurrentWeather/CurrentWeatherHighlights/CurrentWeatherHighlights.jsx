@@ -1,24 +1,29 @@
+import useWeatherStore from '../../../../store/weatherStore';
+
 import './CurrentWeatherHighlights.css';
 
-const CurrentWeatherHighlights = () => {
+const CurrentWeatherHighlights = ({ currentWeatherData }) => {
+	const { feelsLike, humidity, tempMax, tempMin, windSpeed, sunset, sunrise } =
+		currentWeatherData;
+
 	return (
 		<ul className="current-weather__highlights">
 			<_HighlightsElement
 				iconChildren={<i className="ti ti-temperature icon-size-primary"></i>}
 				titleKey="feels like"
-				value="32ºC"
+				value={`${feelsLike}ºC`}
 			/>
 
 			<_HighlightsElement
 				iconChildren={<i className="ti ti-arrows-sort icon-size-primary"></i>}
 				titleKey="min/max"
-				value="29ºC~32ºC"
+				value={`${tempMin}~${tempMax}ºC`}
 			/>
 
 			<_HighlightsElement
 				iconChildren={<i className="ti ti-wind icon-size-primary"></i>}
-				titleKey="wind gusts"
-				value="12 km/h"
+				titleKey="wind speed"
+				value={`${windSpeed} km/h`}
 			/>
 
 			<_HighlightsElement
@@ -26,34 +31,42 @@ const CurrentWeatherHighlights = () => {
 					<i className="ti ti-droplet-half-2-filled icon-size-primary"></i>
 				}
 				titleKey="humidity"
-				value="78%"
+				value={`${humidity}%`}
 			/>
 
 			<_HighlightsElement
 				iconChildren={<i className="ti ti-sunrise icon-size-primary"></i>}
-				titleKey="sunset"
-				value="6:00 AM"
+				titleKey="sunrise"
+				value={`${sunrise.formattedHour}:${
+					sunrise.minutes < 10 ? '0' + sunrise.minutes : sunrise.minutes
+				} ${sunrise.period}`}
 			/>
 
 			<_HighlightsElement
 				iconChildren={<i className="ti ti-sunset icon-size-primary"></i>}
-				titleKey="sunrise"
-				value="5:50 PM"
+				titleKey="sunset"
+				value={`${sunset.formattedHour}:${
+					sunset.minutes < 10 ? '0' + sunset.minutes : sunset.minutes
+				} ${sunset.period}`}
 			/>
 		</ul>
 	);
 };
 
-/* 
-* TODOs: Add internal functionnaming convention to the convention guide
-*/
+/*
+ * TODOs: Add internal functionnaming convention to the convention guide
+ */
 
 const _HighlightsElement = ({ iconChildren, titleKey, value }) => {
 	return (
 		<li className="current-weather__highlights-item">
 			{iconChildren}
-			<span className="highlights-item__key font-size-primary1 font-color-primary">{titleKey}</span>
-			<span className="highlights-item__value font-size-primary1 font-color-primary">{value}</span>
+			<span className="highlights-item__key font-size-primary1 font-color-primary">
+				{titleKey}
+			</span>
+			<span className="highlights-item__value font-size-primary1 font-color-primary">
+				{value}
+			</span>
 		</li>
 	);
 };

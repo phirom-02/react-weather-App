@@ -10,14 +10,12 @@ const Main = () => {
 	return (
 		<main className="main">
 			<div className="main__left">
-			<CurrentWeather />
-			<HourlyForecast />
-
+				<CurrentWeather />
+				<HourlyForecast />
 			</div>
 			<DailyForecast />
 		</main>
 	);
 };
-
 
 export { Main };
