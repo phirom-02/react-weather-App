@@ -6,13 +6,13 @@ import axios from 'axios';
  */
 const errorHandler = (err) => {
 	let error = {
-		msg: 'Something went wrong. Please try again.',
+		message: 'Something went wrong. Please try again.',
 	};
 
 	if (err?.response) {
 		error = {
 			code: err.response.status,
-			msg: err.response.data.message,
+			message: err.response.data.message,
 		};
 	} else {
 		error.code = 1;
@@ -23,7 +23,7 @@ const errorHandler = (err) => {
 
 export const weatherClient = axios.create({
 	baseURL: 'https://api.openweathermap.org/data/2.5/',
-	timeout: 7000,
+	timeout: 10000,
 	headers: {
 		'Content-Type': 'application/json',
 	},
