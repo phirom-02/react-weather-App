@@ -13,8 +13,15 @@ import './index.css';
 import './App.css';
 
 function App() {
-	const { currentWeatherData, hourlyForecastData, isLoading, fetchWeather, setIsLoading, error } =
-		useWeatherStore();
+	const {
+		currentWeatherData,
+		hourlyForecastData,
+		dailyForecastData,
+		isLoading,
+		fetchWeather,
+		setIsLoading,
+		error,
+	} = useWeatherStore();
 
 	useEffect(() => {
 		if ('geolocation' in navigator) {
@@ -36,8 +43,7 @@ function App() {
 		} else fetchWeather(null, null, false);
 	}, []);
 
-	console.log(error ? ('ERROR', error) : 'NO ERROR');
-	console.log(hourlyForecastData)
+	// console.log(error ? ('ERROR', error) : 'NO ERROR');
 
 	return (
 		<div className="App container">
