@@ -4,7 +4,7 @@
 
 .daily-forecast__list {
 	overflow-y: scroll;
-	height: 50vh;
+	height: 530px;
 
 	-ms-overflow-style: none; /* Internet Explorer 10+ */
 	scrollbar-width: none; /* Firefox */

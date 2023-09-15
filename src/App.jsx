@@ -12,11 +12,13 @@ import './index.css';
 
 import './App.css';
 
+import { LoadingUi } from './components/LoadingUI/LoadingUI';
+
+import { ErrorUi } from './components/ErrorUI/ErrorUI';
+
 function App() {
 	const {
 		currentWeatherData,
-		hourlyForecastData,
-		dailyForecastData,
 		isLoading,
 		fetchWeather,
 		setIsLoading,
@@ -48,8 +50,8 @@ function App() {
 	return (
 		<div className="App container">
 			<Nav />
-			{isLoading && <p>loading</p>}
-			{currentWeatherData && <Main />}
+			{isLoading && <LoadingUi />}
+			{error ? <ErrorUi /> : currentWeatherData && <Main />}
 		</div>
 	);
 }
