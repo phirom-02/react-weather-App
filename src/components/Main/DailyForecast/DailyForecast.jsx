@@ -1,8 +1,12 @@
+import useWeatherStore from '../../../store/weatherStore';
+
 import './DailyForecast.css';
 
-import rain from '../../../assets/04dn.svg';
+import { getIcon } from '../../../utils/helpers';
 
 const DailyForecast = () => {
+	const dailyForecastData = useWeatherStore((state) => state.dailyForecastData);
+
 	return (
 		<section className="section daily-forecast__section">
 			<h2 className="font-size-secondary1 font-color-primary header2">
@@ -10,36 +14,34 @@ const DailyForecast = () => {
 			</h2>
 
 			<ul className="daily-forecast__list">
-				<_DailyForecastItem />
-				<_DailyForecastItem />
-				<_DailyForecastItem />
-				<_DailyForecastItem />
-				<_DailyForecastItem />
-				<_DailyForecastItem />
-				<_DailyForecastItem />
-				<_DailyForecastItem />
-				<_DailyForecastItem />
-				<_DailyForecastItem />
-				<_DailyForecastItem />
-				<_DailyForecastItem />
-				<_DailyForecastItem />
+				{dailyForecastData.map((item, i) => (
+					<_DailyForecastItem key={item.date[1]} data={item} index={i} />
+				))}
 			</ul>
 		</section>
 	);
 };
 
-const _DailyForecastItem = () => {
+const _DailyForecastItem = ({ data, index }) => {
+	const {
+		date: [dayOfWeek, date],
+		icon,
+		temp,
+	} = data;
+
 	return (
 		<li className="daily-forecast__item">
 			<div className="daily-forecast__item-date">
-				<h3 className="font-size-primary1 font-color-primary">Wednesday</h3>
-				<span className="font-color-accent">12 sep</span>
+				<h3 className="font-size-primary1 font-color-primary">
+					{index === 0 ? 'Tomorrow' : dayOfWeek}
+				</h3>
+				<span className="font-color-accent">{date}</span>
 			</div>
 			<span className="daily-forecast__item-degree font-color-primary">
-				30ºC
+				{temp}ºC
 			</span>
 			<div className="daily-forecast__item-image">
-				<img src={rain} alt="" />
+				<img src={getIcon(icon)} alt="" />
 			</div>
 		</li>
 	);

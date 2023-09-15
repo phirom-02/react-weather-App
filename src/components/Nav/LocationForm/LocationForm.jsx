@@ -8,7 +8,7 @@ const LocationForm = () => {
 		<div className="location-form">
 			<InputForm />
 			<Buttons />
-			<DropdownResult />
+			{/* <DropdownResult /> */}
 		</div>
 	);
 };

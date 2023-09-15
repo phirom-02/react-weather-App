@@ -1,13 +1,13 @@
 import { useRef, useState } from 'react';
 
+import useWeatherStore from '../../../store/weatherStore';
+
+import { getIcon } from '../../../utils/helpers';
+
 import './HourlyForecast.css';
 
-import rain from '../../../assets/04dn.svg';
-
 const HourlyForecast = () => {
-	/*
-	 * TODO: add drag function the the drag component
-	 */
+	const hourlyForecast = useWeatherStore((state) => state.hourlyForecastData);
 
 	return (
 		<section className="section hourly-forecast__section">
@@ -17,33 +17,30 @@ const HourlyForecast = () => {
 			</h2>
 
 			<ul className="hourly-forecast__cards-wrapper">
-				<_HourlyForecastCard />
-				<_HourlyForecastCard />
-				<_HourlyForecastCard />
-				<_HourlyForecastCard />
-				<_HourlyForecastCard />
-				<_HourlyForecastCard />
-				<_HourlyForecastCard />
-				<_HourlyForecastCard />
-				<_HourlyForecastCard />
-				<_HourlyForecastCard />
-				<_HourlyForecastCard />
-				<_HourlyForecastCard />
-				<_HourlyForecastCard />
-				<_HourlyForecastCard />
+				{hourlyForecast.map((item) => (
+						<_HourlyForecastCard
+							key={item.hour.formattedHour}
+							hour={item.hour.formattedHour}
+							period={item.hour.period}
+							icon={item.icon}
+							temp={item.temp}
+						/>
+				))}
 			</ul>
 		</section>
 	);
 };
 
-const _HourlyForecastCard = () => {
+const _HourlyForecastCard = ({ hour, period, icon, temp }) => {
 	return (
 		<li className="hourly-forecast__card">
-			<span className="font-size-primary1 font-color-secondary">01 pm</span>
+			<span className="font-size-primary1 font-color-secondary">
+				{hour} {period}
+			</span>
 			<div className="hourly-forecast__card-image-container">
-				<img src={rain} alt="" />
+				<img src={getIcon(icon)} alt="" />
 			</div>
-			<span className="font-size-primary1 font-color-secondary">30ºC</span>
+			<span className="font-size-primary1 font-color-secondary">{temp}ºC</span>
 		</li>
 	);
 };

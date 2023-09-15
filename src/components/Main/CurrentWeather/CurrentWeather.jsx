@@ -1,3 +1,5 @@
+import useWeatherStore from '../../../store/weatherStore';
+
 import { CurrentWeatherCard } from './CurrentWeatherCard/CurrentWeatherCard';
 
 import { CurrentWeatherHighlights } from './CurrentWeatherHighlights/CurrentWeatherHighlights';
@@ -5,6 +7,10 @@ import { CurrentWeatherHighlights } from './CurrentWeatherHighlights/CurrentWeat
 import './CurrentWeather.css';
 
 const CurrentWeather = () => {
+	const currentWeatherData = useWeatherStore(
+		(state) => state.currentWeatherData
+	);
+
 	return (
 		<section className="section current-weather__section">
 			<h2 className="font-size-secondary1 font-color-primary header2">
@@ -12,8 +18,8 @@ const CurrentWeather = () => {
 			</h2>
 
 			<div className="current-weather__wrapper">
-				<CurrentWeatherCard />
-				<CurrentWeatherHighlights />
+				<CurrentWeatherCard currentWeatherData={currentWeatherData} />
+				<CurrentWeatherHighlights  currentWeatherData={currentWeatherData}/>
 			</div>
 		</section>
 	);
