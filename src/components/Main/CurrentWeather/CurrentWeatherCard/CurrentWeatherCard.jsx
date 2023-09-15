@@ -13,8 +13,7 @@ const CurrentWeatherCard = ({ currentWeatherData }) => {
 						{currentWeatherData.location}
 					</h3>
 					<span className="font-size-primary1 font-color-primary">
-						{currentWeatherData.date.month} {currentWeatherData.date.day}{' '}
-						{currentWeatherData.date.dayOfWeek}
+						{currentWeatherData.date}
 					</span>
 				</div>
 
