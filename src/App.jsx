@@ -13,7 +13,7 @@ import './index.css';
 import './App.css';
 
 function App() {
-	const { currentWeatherData, isLoading, fetchWeather, setIsLoading, error } =
+	const { currentWeatherData, hourlyForecastData, isLoading, fetchWeather, setIsLoading, error } =
 		useWeatherStore();
 
 	useEffect(() => {
@@ -36,8 +36,8 @@ function App() {
 		} else fetchWeather(null, null, false);
 	}, []);
 
-	console.log('CURRENT', currentWeatherData);
 	console.log(error ? ('ERROR', error) : 'NO ERROR');
+	console.log(hourlyForecastData)
 
 	return (
 		<div className="App container">
