@@ -22,7 +22,7 @@ const errorHandler = (err) => {
 };
 
 export const weatherClient = axios.create({
-	baseURL: 'https://api.openweathermap.org/data/2.5/',
+	baseURL: 'https://pro.openweathermap.org/data/2.5/',
 	timeout: 10000,
 	headers: {
 		'Content-Type': 'application/json',

@@ -17,3 +17,16 @@ export const fetchCurrentWeather = async (lat, lon) => {
 
 	return res;
 };
+
+export const fetchHourlyForecast = async (lat, lon) => {
+	const res = await weatherClient.get('/forecast/hourly', {
+		method: 'get',
+		params: {
+			lat,
+			lon,
+			cnt: 12,
+		},
+	});
+
+	return res;
+};
