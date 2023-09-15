@@ -11,6 +11,7 @@ import { Main } from './components/Main/Main';
 import './index.css';
 
 import './App.css';
+import { LoadingUi } from './components/LoadingUI/LoadingUI';
 
 function App() {
 	const {
@@ -48,7 +49,7 @@ function App() {
 	return (
 		<div className="App container">
 			<Nav />
-			{isLoading && <p>loading</p>}
+			{isLoading && <LoadingUi />}
 			{currentWeatherData && <Main />}
 		</div>
 	);
