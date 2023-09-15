@@ -1,11 +1,12 @@
 import { create } from 'zustand';
 
-import { fetchCurrentWeather } from '../api/weatherAPI';
+import { fetchCurrentWeather, fetchHourlyForecast } from '../api/weatherAPI';
 
 import { getDate, unixTimestampToHours } from '../utils/helpers';
 
-const weatherStore = (set) => ({
+const weatherStore = (set, get) => ({
 	currentWeatherData: null,
+	hourlyForecastData: [],
 	error: null,
 	isLoading: false,
 
@@ -18,8 +19,8 @@ const weatherStore = (set) => ({
 	fetchWeather: async (lat, lon) => {
 		try {
 			set({ isLoading: true });
-
 			const res = await fetchCurrentWeather(lat, lon);
+			await get()._fetchHourlyForecast(lat, lon);
 			set({
 				currentWeatherData: {
 					location: res.name,
@@ -49,6 +50,28 @@ const weatherStore = (set) => ({
 	},
 
 	setIsLoading: (bool) => set({ isLoading: bool }),
+	_fetchHourlyForecast: async (lat, lon) => {
+		try {
+			const res = await fetchHourlyForecast(lat, lon);
+			const data = [];
+			// console.log(res);
+
+			for (let i = 0; i < res.list.length; i++) {
+				data.push({
+					temp: Math.round(res.list[i].main.temp),
+					hour: unixTimestampToHours(res.list[i].dt, res.city.timezone),
+					icon: res.list[i].weather[0].icon,
+				});
+			}
+
+			set({ hourlyForecastData: data, error: null });
+		} catch (error) {
+			set({
+				hourlyForecast: [],
+				error,
+			});
+		}
+	},
 });
 
 const useWeatherStore = create(weatherStore);
