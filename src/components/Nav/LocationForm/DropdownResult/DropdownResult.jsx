@@ -1,24 +1,21 @@
 import './DropdownResult.css';
 
-const cities = [
-	'Phnom Penh',
-	'Seoul',
-	'New York',
-	'Beijing',
-	'Siem Reap',
-	'Gangnam',
-	'Tokyo',
-];
-
-const DropdownResult = () => {
+const DropdownResult = ({ collection = [], message = '' }) => {
 	return (
 		<div className="dropdown-wrapper">
 			<ul className="dropdown-list">
-				{cities.map((city, index) => (
-					<li className="dropdown-list__item font-color-primary" key={index}>
-						{city}
-					</li>
-				))}
+				{!message || collection.length > 0 ? (
+					collection.map((item) => (
+						<li
+							className="dropdown-list__item font-color-primary"
+							key={item.id}
+						>
+							{item.label}
+						</li>
+					))
+				) : (
+					<p className="message font-color-primary">{message}</p>
+				)}
 			</ul>
 		</div>
 	);
