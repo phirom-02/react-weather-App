@@ -33,7 +33,14 @@ const LocationForm = () => {
 
 			{/* Search Result */}
 			{query && (
-				<DropdownResult collection={searchSuggestion} message={query.length <= 3 ? 'Search location...' : 'Location not found'} />
+				<DropdownResult
+					collection={searchSuggestion}
+					message={
+						query.length <= 3 ? 'Search location...' : 'Location not found'
+					}
+					setQuery={setQuery}
+					setCollection={setSearchSuggestion}
+				/>
 			)}
 		</div>
 	);

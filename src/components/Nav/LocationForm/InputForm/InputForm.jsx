@@ -19,7 +19,7 @@ const InputForm = ({ handleSearchSuggestion, setQuery, query }) => {
 			handleSearchSuggestion(
 				filteredLocation.map((location) => ({
 					id: location.id,
-					label: location.name,
+					label: location.name + ', ' + location.country_name,
 					lat: location.coord.lat,
 					lon: location.coord.lon,
 				}))
