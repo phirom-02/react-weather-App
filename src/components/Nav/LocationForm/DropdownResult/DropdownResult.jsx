@@ -2,6 +2,8 @@ import { useState, useEffect } from 'react';
 
 import useWeatherStore from '../../../../store/weatherStore';
 
+import { useSearchHistoryStore } from '../../../../store/searchHistoryStore';
+
 import './DropdownResult.css';
 
 const DropdownResult = ({
@@ -9,16 +11,24 @@ const DropdownResult = ({
 	message = '',
 	setCollection,
 	setQuery,
+	canSaveData = false,
+	canRemoveData = false,
 }) => {
 	const { fetchWeather, setIsLoading } = useWeatherStore();
 
 	const [focusedIndex, setFocusedIndex] = useState(-1);
 
-	const handleFetchWeatehr = (lat, lon) => {
+	const { addSearchHistory, removeSearchHistory } = useSearchHistoryStore();
+
+	const handleFetchWeatehr = (item) => {
 		setIsLoading(true);
-		fetchWeather(lat, lon);
-		setCollection([]);
-		setQuery('');
+		fetchWeather(item.lat, item.lon);
+		if (!canRemoveData) {
+			setCollection([]);
+			setQuery('');
+		}
+
+		if (canSaveData) addSearchHistory(item);
 	};
 
 	const handleKeyDown = (e) => {
@@ -34,7 +44,7 @@ const DropdownResult = ({
 			if (focusedIndex !== -1) {
 				const selectedItem = collection[focusedIndex];
 				// Perform the action when Enter is pressed
-				handleFetchWeatehr(selectedItem.lat, selectedItem.lon);
+				handleFetchWeatehr(selectedItem);
 			}
 		} else if (e.key === 'Escape') {
 			setFocusedIndex(-1);
@@ -59,9 +69,30 @@ const DropdownResult = ({
 								focusedIndex === index ? 'focused' : ''
 							}`}
 							key={item.id}
-							onClick={() => handleFetchWeatehr(item.lat, item.lon)}
 						>
-							{item.label}
+							{!canRemoveData ? (
+								<span
+									className="dropdown-list__content"
+									onClick={() => handleFetchWeatehr(item)}
+								>
+									{item.label}
+								</span>
+							) : (
+								<>
+									<span
+										className="dropdown-list__content"
+										onClick={() => handleFetchWeatehr(item)}
+									>
+										{item.label}
+									</span>
+									<span
+										className="remove-btn"
+										onClick={() => removeSearchHistory(item.id)}
+									>
+										<i className="ti ti-x font-color-primary"></i>
+									</span>
+								</>
+							)}
 						</li>
 					))
 				) : (

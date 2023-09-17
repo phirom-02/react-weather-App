@@ -18,23 +18,26 @@
 	display: flex;
 	align-items: center;
 	justify-content: space-between;
-
-	border-bottom: 1px solid var(--misty-silver);
-	padding: 1rem 1.25rem;
-	cursor: pointer;
 }
 
 .dropdown-list__item:hover {
 	background-color: var(--misty-silver);
 }
 
-.message {
+.dropdown-list__content {
+	border-bottom: 1px solid var(--misty-silver);
+	padding: 1rem 1.25rem;
+	cursor: pointer;
+}
+
+.message,
+.remove-btn {
 	padding: 1rem 1.25rem;
 }
 
 .focused {
-  background-color: var(--misty-silver);
-  cursor: pointer;
+	background-color: var(--misty-silver);
+	cursor: pointer;
 }
 
 @media screen and (min-width: 1024px) {
