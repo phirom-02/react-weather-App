@@ -32,6 +32,11 @@
 	padding: 1rem 1.25rem;
 }
 
+.focused {
+  background-color: var(--misty-silver);
+  cursor: pointer;
+}
+
 @media screen and (min-width: 1024px) {
 	.dropdown-wrapper {
 		bottom: -16px;
