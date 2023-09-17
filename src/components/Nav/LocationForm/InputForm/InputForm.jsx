@@ -4,10 +4,12 @@ import locationData from '../../../../data/location_data.json';
 
 import './InputForm.css';
 
-const InputForm = ({ handleSearchSuggestion, setQuery, query }) => {
+const InputForm = ({ handleSearchSuggestion, handleToggleHistory, setQuery, query,  }) => {
 
 	const handleSearch = (query) => {
 		setQuery(query);
+
+		handleToggleHistory(false)
 
 		if (query.length > 3) {
 			const filteredLocation = locationData

@@ -1,5 +1,7 @@
 import { useState } from 'react';
 
+import { useSearchHistoryStore } from '../../../store/searchHistoryStore';
+
 import { Buttons } from './Buttons/Buttons';
 
 import { InputForm } from './InputForm/InputForm';
@@ -9,6 +11,10 @@ import { DropdownResult } from './DropdownResult/DropdownResult';
 import './LocationForm.css';
 
 const LocationForm = () => {
+	const { searchHistories } = useSearchHistoryStore();
+
+	const [toggleHistory, setToggleHistory] = useState(false);
+
 	const [searchSuggestion, setSearchSuggestion] = useState([]);
 
 	const [query, setQuery] = useState('');
@@ -28,11 +34,12 @@ const LocationForm = () => {
 				handleSearchSuggestion={handleSearchSuggestion}
 				setQuery={setQuery}
 				query={query}
+				handleToggleHistory={setToggleHistory}
 			/>
-			<Buttons />
+			<Buttons setToggleHistory={setToggleHistory} toggleHistory={toggleHistory} />
 
 			{/* Search Result */}
-			{query && (
+			{(query && !toggleHistory) && (
 				<DropdownResult
 					collection={searchSuggestion}
 					message={
@@ -40,6 +47,15 @@ const LocationForm = () => {
 					}
 					setQuery={setQuery}
 					setCollection={setSearchSuggestion}
+					canSaveData={true}
+				/>
+			)}
+
+			{toggleHistory && (
+				<DropdownResult
+					collection={searchHistories}
+					message="You don't search have history"
+					canRemoveData={true}
 				/>
 			)}
 		</div>
