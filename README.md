@@ -2,7 +2,7 @@
 
 Sep 18, 2023
 
-# What's new?
+## What's new?
 
 - Drop down search location
 - Button that will fetch the weather based on user's current location
