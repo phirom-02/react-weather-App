@@ -1,6 +1,6 @@
 import './ErrorUi.css'
 
-import errorImage from '/code-red.svg';
+const errorImage = './code-red.svg';
 
 const ErrorUi = () => {
 	return (
