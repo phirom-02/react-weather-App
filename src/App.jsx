@@ -50,8 +50,8 @@ function App() {
 	return (
 		<div className="App container">
 			<Nav />
-			{isLoading && <LoadingUi />}
-			{error ? <ErrorUi /> : currentWeatherData && <Main />}
+			{isLoading || !currentWeatherData ? <LoadingUi /> : <Main />}
+			{error && <ErrorUi />}
 		</div>
 	);
 }
