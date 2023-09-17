@@ -1,4 +1,15 @@
-# Fireflies-Phirom-Weather-App  1.0.0
+# Fireflies-Phirom-Weather-App 1.1.0
+
+Sep 18, 2023
+
+# What's new?
+
+- Drop down search location
+- Button that will fetch the weather based on user's current location
+- Save the searched location as search history
+  - The search histories can be access by clicking history button.
+
+# Fireflies-Phirom-Weather-App 1.0.0
 
 Sep 16, 2023
 
