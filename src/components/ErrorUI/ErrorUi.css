@@ -7,6 +7,7 @@
 	width: 100%;
 	height: 100vh;
 	position: relative;
+	padding: 1rem;
 }
 
 .error-ui__image {
@@ -15,10 +16,11 @@
 }
 
 .error-ui__text {
-	position: absolute;
-	transform: translateY(100%);
-  text-align: center;
+	transform: translateY(-50%);
 	font-size: 1rem;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
 }
 
 @media screen and (min-width: 1024px) {
