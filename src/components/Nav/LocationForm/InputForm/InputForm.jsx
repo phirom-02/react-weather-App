@@ -1,15 +1,36 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 
-import locationData from '../../../../data/location_data.json';
+import axios from 'axios';
 
 import './InputForm.css';
 
-const InputForm = ({ handleSearchSuggestion, handleToggleHistory, setQuery, query,  }) => {
+const InputForm = ({
+	handleSearchSuggestion,
+	handleToggleHistory,
+	setQuery,
+	query,
+}) => {
+	const [locationData, setLocationData] = useState([]);
+
+	useEffect(() => {
+		const fetchLocationData = async () => {
+			try {
+				const res = await axios.get(
+					'https://lenghub1.github.io/city_json/cityname_data.json'
+				);
+				setLocationData(res.data);
+			} catch (error) {
+				console.log(error);
+			}
+		};
+
+		fetchLocationData();
+	}, []);
 
 	const handleSearch = (query) => {
 		setQuery(query);
 
-		handleToggleHistory(false)
+		handleToggleHistory(false);
 
 		if (query.length > 3) {
 			const filteredLocation = locationData

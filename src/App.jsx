@@ -17,13 +17,8 @@ import { LoadingUi } from './components/LoadingUI/LoadingUi';
 import { ErrorUi } from './components/ErrorUI/ErrorUi';
 
 function App() {
-	const {
-		currentWeatherData,
-		isLoading,
-		fetchWeather,
-		setIsLoading,
-		error,
-	} = useWeatherStore();
+	const { currentWeatherData, isLoading, fetchWeather, setIsLoading, error } =
+		useWeatherStore();
 
 	useEffect(() => {
 		if ('geolocation' in navigator) {
@@ -50,8 +45,13 @@ function App() {
 	return (
 		<div className="App container">
 			<Nav />
-			{isLoading || !currentWeatherData ? <LoadingUi /> : <Main />}
-			{error && <ErrorUi />}
+			{isLoading ? (
+				<LoadingUi />
+			) : error || !currentWeatherData ? (
+				<ErrorUi />
+			) : (
+				<Main />
+			)}
 		</div>
 	);
 }
