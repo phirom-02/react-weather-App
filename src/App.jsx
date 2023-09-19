@@ -45,13 +45,14 @@ function App() {
 		} else fetchWeather(null, null, false);
 	}, []);
 
-	// console.log(error ? ('ERROR', error) : 'NO ERROR');
+	console.log(error ? ('ERROR', error) : 'NO ERROR');
 
 	return (
 		<div className="App container">
 			<Nav />
-			{isLoading || !currentWeatherData ? <LoadingUi /> : <Main />}
-			{error && <ErrorUi />}
+			{/* {isLoading || !currentWeatherData ? <LoadingUi /> : <Main />} */}
+			{isLoading ? <LoadingUi /> : error || !currentWeatherData ? <ErrorUi /> : <Main />}
+			{/* {error && <ErrorUi />} */}
 		</div>
 	);
 }
