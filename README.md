@@ -10,7 +10,7 @@
 
 <h1 id="project_overview">Project Overview</h1>
 
-A weather app by a team member of Fireflies, Khim Phirom
+A weather app by Khim Phirom
 
 **Link to the final product:** https://anb-hq.github.io/Fireflies-Phirom-Weather-App/
 
