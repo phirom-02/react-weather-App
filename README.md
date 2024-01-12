@@ -12,8 +12,6 @@
 
 A weather app by Khim Phirom
 
-**Link to the final product:** https://anb-hq.github.io/Fireflies-Phirom-Weather-App/
-
 <br>
 
 ## Product Screenshort
